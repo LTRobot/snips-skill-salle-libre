@@ -43,7 +43,24 @@ def read_configuration_file(configuration_file):
     except (IOError, ConfigParser.Error) as e:
         return dict()
 
+def intent_received(hermes, intent_message):
+
+    conf = read_configuration_file(CONFIG_INI)
+
+    slots = intent_message.slots
+
+    salle = slots.salle[0].raw_value
+    time_start = slots.timeStart[0].raw_value
+    time_end = slots.timeEnd[0].raw_value
+
+    print(salle);
+    print(time_start)
+    print(time_end)
 
 
-with Hermes(MQTT_ADDR) as h:
-    h.subscribe_intents(intent_received).start()
+    hermes.publish_end_session(intent_message.session_id, sentence)
+
+
+    
+    with Hermes(MQTT_ADDR) as h:
+        h.subscribe_intents(intent_received).start()
