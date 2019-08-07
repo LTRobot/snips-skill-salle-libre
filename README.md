@@ -1,1 +1,0 @@
-# snips-skill-salle-libre
