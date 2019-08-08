@@ -50,7 +50,9 @@ def action_wrapper(hermes, intentMessage, conf):
     print(time_start)
     print(time_end)
     
-
+    current_session_id = intentMessage.session_id
+    hermes.publish_end_session(current_session_id, result_sentence)
+ 
 
 if __name__ == "__main__":
     mqtt_opts = MqttOptions()
