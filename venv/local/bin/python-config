@@ -1,4 +1,4 @@
-#!/var/lib/snips/skills/LTRobot.SalleLibre/venv/bin/python
+#!/var/lib/snips/skills/snips-skill-salle-libre/venv/bin/python
 
 import sys
 import getopt

@@ -1,4 +1,4 @@
-#!/var/lib/snips/skills/LTRobot.SalleLibre/venv/bin/python2
+#!/var/lib/snips/skills/snips-skill-salle-libre/venv/bin/python2
 # -*- coding: utf-8 -*-
 import re
 import sys

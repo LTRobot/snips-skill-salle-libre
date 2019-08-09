@@ -56,7 +56,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/var/lib/snips/skills/LTRobot.SalleLibre/venv"
+set -gx VIRTUAL_ENV "/var/lib/snips/skills/snips-skill-salle-libre/venv"
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | tr "." "\n")[1] -lt 3

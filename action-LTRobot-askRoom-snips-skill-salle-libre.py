@@ -3,10 +3,10 @@
 
 import ConfigParser
 from hermes_python.hermes import Hermes
-from hermes_python.ffi.utils import MqttOptions
 from hermes_python.ontology import *
 import io
 
+import dateutils
 CONFIGURATION_ENCODING_FORMAT = "utf-8"
 CONFIG_INI = "config.ini"
 
@@ -40,18 +40,22 @@ def action_wrapper(hermes, intentMessage, conf):
     Refer to the documentation for further details. 
     """ 
     
-    slots = intentMessage.slot
+    slots = intentMessage.slots
     
-    salle = slots.salle[0].raw_value
-    time_start = slots.timeStart[0].raw_value
-    time_end = slots.timeEnd[0].raw_value
-    
+    salle = slots.salle.first().value
+
+    time = "lol"
+
+
+    if(slots.timeStart.first() != None):
+        time_start = slots.temps[0].slot_value.value
+   
     print(salle)
-    print(time_start)
-    print(time_end)
+
+    print(time)
     
     current_session_id = intentMessage.session_id
-    hermes.publish_end_session(current_session_id, result_sentence)
+    hermes.publish_end_session(current_session_id," Je sais pas. M D R  P D T R  LOL X D D D D D D D D D D D")
  
 
 if __name__ == "__main__":
